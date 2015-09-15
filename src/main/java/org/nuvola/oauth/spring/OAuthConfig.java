@@ -36,12 +36,14 @@ public class OAuthConfig extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()
                 .withClient("myapp")
                 .secret("KDV3FT2wCMnmzwzH")
-                .authorizedGrantTypes("authorization_code", "refresh_token", "password").scopes("openid");
+                .authorizedGrantTypes("authorization_code", "refresh_token", "password")
+                .scopes("openid");
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.authenticationManager(authenticationManager).accessTokenConverter(jwtAccessTokenConverter());
+        endpoints.authenticationManager(authenticationManager)
+                .accessTokenConverter(jwtAccessTokenConverter());
     }
 
     @Override
