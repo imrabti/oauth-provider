@@ -1,9 +1,20 @@
 package org.nuvola.oauth.business;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Account {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private User user;
+    @ManyToOne
     private Application application;
+    @ManyToOne
     private Authority authority;
 
     public Long getId() {
