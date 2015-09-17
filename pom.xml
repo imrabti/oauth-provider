@@ -79,11 +79,11 @@
         <dependencies>
             <!-- OAuth server dependencies -->
             <dependency>
-                <groupId>org.nuvola.oauth</groupId>
-                <artifactId>shared</artifactId>
-                <version>${project.version}</version>
-                <scope>compile</scope>
-            </dependency>
+            <groupId>org.nuvola.oauth</groupId>
+            <artifactId>shared</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
+        </dependency>
 
             <!-- Spring dependencies -->
             <dependency>
