@@ -23,7 +23,7 @@ public class OAuthConfig extends AuthorizationServerConfigurerAdapter {
 
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        NuvolaTokenConverter converter = new NuvolaTokenConverter();
         KeyPair keyPair = new KeyStoreKeyFactory(
                 new ClassPathResource("keystore.jks"), "rDM6rFUFBNCBYpy7".toCharArray())
                 .getKeyPair("nuvola.org");

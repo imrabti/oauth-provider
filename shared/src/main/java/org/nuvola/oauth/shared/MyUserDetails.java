@@ -7,46 +7,65 @@
  * agreements you have entered into with The Company.
  */
 
-package org.nuvola.oauth.security;
+package org.nuvola.oauth.shared;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 public class MyUserDetails implements UserDetails {
+    private UserProfile userProfile;
+    private List<GrantedAuthority> authorities;
+    private Boolean accountNonLocked;
+
+    public MyUserDetails() {
+        this.accountNonLocked = true;
+    }
+
+    public MyUserDetails(UserProfile userProfile, List<GrantedAuthority> authorities) {
+        this.userProfile = userProfile;
+        this.authorities = authorities;
+        this.accountNonLocked = true;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return userProfile.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return userProfile.getUserName();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return accountNonLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    public UserProfile getUserProfile() {
+        return userProfile;
     }
 }
