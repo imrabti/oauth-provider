@@ -9,7 +9,6 @@ public class UserProfile {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
     private List<ApplicationAuthority> authorities;
 
     public UserProfile() {
@@ -54,14 +53,6 @@ public class UserProfile {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public List<ApplicationAuthority> getAuthorities() {

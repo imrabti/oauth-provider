@@ -9,14 +9,15 @@
 
 package org.nuvola.oauth.shared;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 public class MyUserDetails implements UserDetails {
     private UserProfile userProfile;
+    private String password;
     private List<GrantedAuthority> authorities;
     private Boolean accountNonLocked;
 
@@ -24,7 +25,8 @@ public class MyUserDetails implements UserDetails {
         this.accountNonLocked = true;
     }
 
-    public MyUserDetails(UserProfile userProfile, List<GrantedAuthority> authorities) {
+    public MyUserDetails(UserProfile userProfile, String password, List<GrantedAuthority> authorities) {
+        this.password = password;
         this.userProfile = userProfile;
         this.authorities = authorities;
         this.accountNonLocked = true;
@@ -37,7 +39,7 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return userProfile.getPassword();
+        return password;
     }
 
     @Override

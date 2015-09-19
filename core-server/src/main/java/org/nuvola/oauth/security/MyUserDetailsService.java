@@ -1,5 +1,8 @@
 package org.nuvola.oauth.security;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.nuvola.oauth.business.Account;
 import org.nuvola.oauth.business.User;
 import org.nuvola.oauth.repository.AccountRepository;
@@ -14,9 +17,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class MyUserDetailsService implements UserDetailsService {
@@ -42,7 +42,6 @@ public class MyUserDetailsService implements UserDetailsService {
         profile.setUserName(user.getUserName());
         profile.setFirstName(user.getFirstName());
         profile.setLastName(user.getLastName());
-        profile.setPassword(user.getPassword());
         profile.setEmail(user.getEmail());
 
         List<ApplicationAuthority> authorities = new ArrayList<>();
@@ -58,6 +57,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
         profile.setAuthorities(authorities);
 
-        return new MyUserDetails(profile, granted);
+        return new MyUserDetails(profile, user.getPassword(), granted);
     }
 }
