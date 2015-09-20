@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserProfile {
-    private Long id;
     private String userName;
     private String firstName;
     private String lastName;
@@ -13,14 +12,6 @@ public class UserProfile {
 
     public UserProfile() {
         authorities = new ArrayList<>();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUserName() {

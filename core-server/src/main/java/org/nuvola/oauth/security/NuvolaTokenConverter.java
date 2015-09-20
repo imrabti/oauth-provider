@@ -1,9 +1,8 @@
-package org.nuvola.oauth.spring;
+package org.nuvola.oauth.security;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.nuvola.oauth.shared.MyUserDetails;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

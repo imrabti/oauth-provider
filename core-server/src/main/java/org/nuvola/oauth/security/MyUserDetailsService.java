@@ -8,7 +8,6 @@ import org.nuvola.oauth.business.User;
 import org.nuvola.oauth.repository.AccountRepository;
 import org.nuvola.oauth.repository.UserRepository;
 import org.nuvola.oauth.shared.ApplicationAuthority;
-import org.nuvola.oauth.shared.MyUserDetails;
 import org.nuvola.oauth.shared.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -38,7 +37,6 @@ public class MyUserDetailsService implements UserDetailsService {
         }
 
         UserProfile profile = new UserProfile();
-        profile.setId(user.getId());
         profile.setUserName(user.getUserName());
         profile.setFirstName(user.getFirstName());
         profile.setLastName(user.getLastName());

@@ -7,11 +7,12 @@
  * agreements you have entered into with The Company.
  */
 
-package org.nuvola.oauth.shared;
+package org.nuvola.oauth.security;
 
 import java.util.Collection;
 import java.util.List;
 
+import org.nuvola.oauth.shared.UserProfile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

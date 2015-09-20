@@ -1,5 +1,7 @@
 package org.nuvola.oauth;
 
+import javax.annotation.PostConstruct;
+
 import org.nuvola.oauth.business.Account;
 import org.nuvola.oauth.business.Application;
 import org.nuvola.oauth.business.Authority;
@@ -12,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
-
-import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class AuthServerApplication {
