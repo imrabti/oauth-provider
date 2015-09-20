@@ -28,6 +28,7 @@
         <gwt.version>2.7.0</gwt.version>
         <wro4j.version>1.7.6</wro4j.version>
         <java.version>1.7</java.version>
+        <gwtp.version>1.5</gwtp.version>
         <spring-oauth2.version>2.0.7.RELEASE</spring-oauth2.version>
     </properties>
 
@@ -110,6 +111,18 @@
                 <groupId>com.google.gwt</groupId>
                 <artifactId>gwt-user</artifactId>
                 <version>${gwt.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-mvp-client</artifactId>
+                <version>${gwtp.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.gwtplatform</groupId>
+                <artifactId>gwtp-dispatch-rest</artifactId>
+                <version>${gwtp.version}</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>

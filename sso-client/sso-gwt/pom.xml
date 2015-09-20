@@ -17,5 +17,19 @@
             <groupId>org.nuvola.oauth</groupId>
             <artifactId>sso-shared</artifactId>
         </dependency>
+
+        <!-- Google Web Toolkit dependencies -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-mvp-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-dispatch-rest</artifactId>
+        </dependency>
     </dependencies>
 </project>
