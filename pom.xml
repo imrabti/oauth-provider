@@ -20,7 +20,7 @@
 
     <modules>
         <module>core-server</module>
-        <module>shared</module>
+        <module>sso-client</module>
     </modules>
 
     <properties>
@@ -80,7 +80,19 @@
             <!-- OAuth server dependencies -->
             <dependency>
                 <groupId>org.nuvola.oauth</groupId>
-                <artifactId>shared</artifactId>
+                <artifactId>sso-shared</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.nuvola.oauth</groupId>
+                <artifactId>sso-server</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.nuvola.oauth</groupId>
+                <artifactId>sso-gwt</artifactId>
                 <version>${project.version}</version>
                 <scope>compile</scope>
             </dependency>
