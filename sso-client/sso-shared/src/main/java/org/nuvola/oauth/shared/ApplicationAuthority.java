@@ -1,6 +1,8 @@
 package org.nuvola.oauth.shared;
 
-public class ApplicationAuthority {
+import java.io.Serializable;
+
+public class ApplicationAuthority implements Serializable {
     private String clientId;
     private String authority;
 

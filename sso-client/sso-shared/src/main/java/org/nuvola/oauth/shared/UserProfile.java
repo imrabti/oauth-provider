@@ -1,9 +1,10 @@
 package org.nuvola.oauth.shared;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserProfile {
+public class UserProfile implements Serializable {
     private String userName;
     private String firstName;
     private String lastName;
