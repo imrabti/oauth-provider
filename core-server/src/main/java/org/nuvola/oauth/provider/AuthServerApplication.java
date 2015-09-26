@@ -132,7 +132,7 @@ public class AuthServerApplication {
         Account imrabtiPortalAccount = new Account();
         imrabtiPortalAccount.setUser(imrabti);
         imrabtiPortalAccount.setApplication(portalApp);
-        imrabtiPortalAccount.setAuthority(authorityUserPortalApp);
+        imrabtiPortalAccount.setAuthority(authorityAdminPortalApp);
         accountRepository.save(imrabtiPortalAccount);
 
         Account mkechaMyAppAccount = new Account();

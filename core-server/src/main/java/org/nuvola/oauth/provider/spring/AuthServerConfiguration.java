@@ -94,12 +94,19 @@ public class AuthServerConfiguration extends WebMvcConfigurerAdapter {
 
         @Override
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients.jdbc(dataSource)
-                    .withClient("myapp")
-                    .secret("KDV3FT2wCMnmzwzH")
-                    .authorizedGrantTypes("authorization_code", "refresh_token", "password")
-                    .scopes("openid")
-                    .autoApprove(true);
+            clients
+                    .jdbc(dataSource)
+                        .withClient("myapp")
+                        .secret("KDV3FT2wCMnmzwzH")
+                        .authorizedGrantTypes("authorization_code", "refresh_token", "password")
+                        .scopes("openid")
+                        .autoApprove(true)
+                    .and()
+                        .withClient("portalapp")
+                        .secret("0eazudRWsUwWL9UL")
+                        .authorizedGrantTypes("authorization_code", "refresh_token", "password")
+                        .scopes("openid")
+                        .autoApprove(true);
         }
 
         @Override
