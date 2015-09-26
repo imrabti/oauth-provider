@@ -23,6 +23,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -88,25 +89,19 @@ public class AuthServerConfiguration extends WebMvcConfigurerAdapter {
         @Autowired
         private DataSource dataSource;
 
+        @Bean
         public JdbcTokenStore jdbcTokenStore() {
             return new JdbcTokenStore(dataSource);
         }
 
+        @Bean
+        public JdbcClientDetailsService jdbcClientDetailsService() {
+            return new JdbcClientDetailsService(dataSource);
+        }
+
         @Override
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-            clients
-                    .jdbc(dataSource)
-                        .withClient("myapp")
-                        .secret("KDV3FT2wCMnmzwzH")
-                        .authorizedGrantTypes("authorization_code", "refresh_token", "password")
-                        .scopes("openid")
-                        .autoApprove(true)
-                    .and()
-                        .withClient("portalapp")
-                        .secret("0eazudRWsUwWL9UL")
-                        .authorizedGrantTypes("authorization_code", "refresh_token", "password")
-                        .scopes("openid")
-                        .autoApprove(true);
+            clients.withClientDetails(jdbcClientDetailsService());
         }
 
         @Override

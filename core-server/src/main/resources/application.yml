@@ -1,0 +1,21 @@
+server:
+  contextPath: /uaa
+security:
+  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+logging:
+  level:
+    org.springframework.security: 'DEBUG'
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth?autoReconnect=true
+    username: oauth
+    password: oauth
+    test-on-borrow: true
+    test-on-return: false
+    validation-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      show-sql: false
