@@ -19,8 +19,8 @@
     </parent>
 
     <modules>
-        <module>core-server</module>
         <module>sso-client</module>
+        <module>sso-provider</module>
     </modules>
 
     <properties>
@@ -80,6 +80,12 @@
     <dependencyManagement>
         <dependencies>
             <!-- OAuth server dependencies -->
+            <dependency>
+                <groupId>org.nuvola.oauth</groupId>
+                <artifactId>model</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
             <dependency>
                 <groupId>org.nuvola.oauth</groupId>
                 <artifactId>sso-shared</artifactId>
