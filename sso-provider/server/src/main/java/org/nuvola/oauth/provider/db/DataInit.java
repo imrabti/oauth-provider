@@ -2,11 +2,11 @@ package org.nuvola.oauth.provider.db;
 
 import javax.annotation.PostConstruct;
 
-import org.nuvola.oauth.provider.business.Account;
-import org.nuvola.oauth.provider.business.Application;
-import org.nuvola.oauth.provider.business.Authority;
-import org.nuvola.oauth.provider.business.OAuthClientDetails;
-import org.nuvola.oauth.provider.business.User;
+import org.nuvola.oauth.provider.server.business.Account;
+import org.nuvola.oauth.provider.server.business.Application;
+import org.nuvola.oauth.provider.server.business.Authority;
+import org.nuvola.oauth.provider.server.business.OAuthClientDetails;
+import org.nuvola.oauth.provider.server.business.User;
 import org.nuvola.oauth.provider.repository.AccountRepository;
 import org.nuvola.oauth.provider.repository.ApplicationRepository;
 import org.nuvola.oauth.provider.repository.AuthorityRepository;

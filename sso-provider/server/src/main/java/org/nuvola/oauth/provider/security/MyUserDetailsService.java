@@ -3,8 +3,8 @@ package org.nuvola.oauth.provider.security;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.nuvola.oauth.provider.business.Account;
-import org.nuvola.oauth.provider.business.User;
+import org.nuvola.oauth.provider.server.business.Account;
+import org.nuvola.oauth.provider.server.business.User;
 import org.nuvola.oauth.provider.repository.AccountRepository;
 import org.nuvola.oauth.provider.repository.UserRepository;
 import org.nuvola.oauth.shared.ApplicationAuthority;

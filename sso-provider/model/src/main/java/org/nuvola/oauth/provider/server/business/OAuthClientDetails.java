@@ -1,4 +1,4 @@
-package org.nuvola.oauth.provider.business;
+package org.nuvola.oauth.provider.server.business;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

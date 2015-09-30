@@ -1,4 +1,4 @@
-package org.nuvola.oauth.provider.business;
+package org.nuvola.oauth.provider.server.business;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,16 +7,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Account {
+public class Authority {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
-    private User user;
+    private String value;
     @ManyToOne
     private Application application;
-    @ManyToOne
-    private Authority authority;
 
     public Long getId() {
         return id;
@@ -26,12 +23,12 @@ public class Account {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getValue() {
+        return value;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public Application getApplication() {
@@ -40,13 +37,5 @@ public class Account {
 
     public void setApplication(Application application) {
         this.application = application;
-    }
-
-    public Authority getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(Authority authority) {
-        this.authority = authority;
     }
 }
