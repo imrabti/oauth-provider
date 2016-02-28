@@ -1,7 +1,7 @@
 server:
   contextPath: /uaa
 security:
-  ignored: /css/**,/js/**,/favicon.ico,/webjars/**
+  ignored: /css/**,/js/**,/font/**,/favicon.ico
 logging:
   level:
     org.springframework.security: 'DEBUG'
@@ -18,4 +18,3 @@ spring:
     hibernate:
       ddl-auto: update
       naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
-      show-sql: false
