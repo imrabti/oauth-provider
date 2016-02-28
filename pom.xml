@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.2.RELEASE</version>
+        <version>1.3.3.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -28,7 +28,7 @@
         <gwt.version>2.7.0</gwt.version>
         <java.version>1.7</java.version>
         <gwtp.version>1.5.1</gwtp.version>
-        <spring-oauth2.version>2.0.7.RELEASE</spring-oauth2.version>
+        <spring-oauth2.version>2.0.9.RELEASE</spring-oauth2.version>
     </properties>
 
     <dependencyManagement>
