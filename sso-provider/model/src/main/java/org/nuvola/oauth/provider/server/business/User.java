@@ -1,18 +1,27 @@
-package org.nuvola.oauth.shared;
+package org.nuvola.oauth.provider.server.business;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class UserProfile implements Serializable {
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String userName;
     private String firstName;
     private String lastName;
     private String email;
-    private List<ApplicationAuthority> authorities;
+    private String password;
 
-    public UserProfile() {
-        authorities = new ArrayList<>();
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
@@ -47,11 +56,11 @@ public class UserProfile implements Serializable {
         this.email = email;
     }
 
-    public List<ApplicationAuthority> getAuthorities() {
-        return authorities;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAuthorities(List<ApplicationAuthority> authorities) {
-        this.authorities = authorities;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

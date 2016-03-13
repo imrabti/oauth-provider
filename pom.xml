@@ -14,72 +14,32 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.0.M5</version>
+        <version>1.3.3.RELEASE</version>
         <relativePath/>
     </parent>
 
     <modules>
-        <module>core-server</module>
         <module>sso-client</module>
+        <module>sso-provider</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <gwt.version>2.7.0</gwt.version>
-        <wro4j.version>1.7.6</wro4j.version>
         <java.version>1.7</java.version>
-        <gwtp.version>1.5</gwtp.version>
-        <spring-oauth2.version>2.0.7.RELEASE</spring-oauth2.version>
+        <gwtp.version>1.5.1</gwtp.version>
+        <spring-oauth2.version>2.0.9.RELEASE</spring-oauth2.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>http://repo.spring.io/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>http://repo.spring.io/libs-milestone-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-releases</id>
-            <name>Spring Releases</name>
-            <url>http://repo.spring.io/libs-release-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>http://repo.spring.io/libs-snapshot-local</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>http://repo.spring.io/libs-milestone-local</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
             <!-- OAuth server dependencies -->
+            <dependency>
+                <groupId>org.nuvola.oauth</groupId>
+                <artifactId>model</artifactId>
+                <version>${project.version}</version>
+                <scope>compile</scope>
+            </dependency>
             <dependency>
                 <groupId>org.nuvola.oauth</groupId>
                 <artifactId>sso-shared</artifactId>

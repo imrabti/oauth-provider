@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFEFEF;
+}
+
+.container {
+    width: 400px;
+    background-color: #fff;
+}
+
+.loginWrapper {
+    padding: 15px 15px 0;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: -10px;
+    padding-bottom: 7px;
+}
